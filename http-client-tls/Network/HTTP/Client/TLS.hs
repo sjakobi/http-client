@@ -59,10 +59,10 @@ tlsManagerSettings :: ManagerSettings
 tlsManagerSettings = mkManagerSettings def Nothing
 
 -- | This internal global value is used to avoid needing to
-reinitialize the connection context across managers, and to share the
-context between managerTlsConnection and
-managerTlsProxyConnection. See:
-https://github.com/snoyberg/http-client/issues/214
+-- reinitialize the connection context across managers, and to share the
+-- context between managerTlsConnection and
+-- managerTlsProxyConnection. See:
+-- https://github.com/snoyberg/http-client/issues/214
 connectionContext :: NC.ConnectionContext
 connectionContext = unsafePerformIO NC.initConnectionContext
 {-# NOINLINE connectionContext #-}
